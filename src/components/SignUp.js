@@ -4,7 +4,7 @@ import { Button, Form, FormGroup, Input,Container } from "reactstrap";
 import axios from "axios";
 import base_url from "../api/apiURL";
 import { toast } from "react-toastify";
-
+import {data} from '../api/userdata';
 const SignUp = () => {
 
   // useEffect(()=>{
@@ -16,9 +16,9 @@ const SignUp = () => {
   const [user, setUser] = useState({});
   //form handler function
   const handleForm=(e)=>{
+    e.preventDefault();
     console.log(user);
     postDatatoServer(user);
-    e.preventDefault();
   }
 
   //function to post signup data of passenger to server

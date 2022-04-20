@@ -31,7 +31,7 @@ const FlightApp = () => {
               <div className="grid justify-center space-y-5 bg-indigo-50 pb-10">
                 <div>
                   <div className="flex space-x-8 mt-5">
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center space-x-2" style={{display:'flex'}}>
                       <input
                         type="radio"
                         className={`w-6 h-6 ${
@@ -47,9 +47,6 @@ const FlightApp = () => {
                         })}
                       />
                       <p className="text-xl font-bold uppercase">Round trip</p>
-                    </div>
-
-                    <div className="flex items-center space-x-2">
                       <input
                         type="radio"
                         className={`w-6 h-6 ${
@@ -65,16 +62,13 @@ const FlightApp = () => {
                         })}
                       />
                       <p className="text-xl font-bold uppercase">one way</p>
-                    </div>
-
-                    <div className="flex items-center space-x-2">
                       <input
                         type="radio"
                         className={`w-6 h-6 ${
                           errors.tripType &&
                           " focus:border-red-500 focus:ring-red-500 border-red-500"
                         }`}
-                        value="multy-city"
+                        value="multi-city"
                         {...register("tripType", {
                           required: {
                             value: true,
@@ -82,8 +76,10 @@ const FlightApp = () => {
                           },
                         })}
                       />
-                      <p className="text-xl font-bold uppercase">multy-city</p>
+                      <p className="text-xl font-bold uppercase">multi-city</p>
                     </div>
+
+    
                   </div>
                   <div>
                     {errors.tripType && (
